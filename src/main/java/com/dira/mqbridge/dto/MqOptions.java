@@ -10,7 +10,7 @@ public class MqOptions {
     private Integer retryWaitMs = 4000;
 
     @JsonProperty("timeout_ms")
-    private Integer timeoutMs = 10000;
+    private Integer timeoutMs = 3000;
 
     private String format = "string";
 

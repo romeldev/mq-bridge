@@ -25,7 +25,7 @@ USER app
 # Copy jar from builder (Spring Boot fat jar)
 COPY --from=builder /app/target/mqbridge-*.jar app.jar
 
-# App listens on 8081
-EXPOSE 8081
+# App listens on 8080
+EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
