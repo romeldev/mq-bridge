@@ -102,8 +102,9 @@ public class MqClientService {
             }
 
             String body = response.readStringOfByteLength(dataLen);
+            String msgId = hexOf(putMsg.messageId);
             log.info("Respuesta recibida ({} bytes): {}", dataLen, body);
-            return MqSendResponse.ok(body, /* retriesUsed= */ 0);
+            return MqSendResponse.ok(msgId, body, /* retriesUsed= */ 0);
 
         } catch (MQException e) {
             log.error("Error MQ [CC={} RC={}]: {}", e.completionCode, e.reasonCode, e.getMessage(), e);
